@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CacaoLenca · Chocolate artesanal hondureño</title>
+  <meta name="description" content="CacaoLenca: chocolate artesanal elaborado con cacao 100% hondureño de la región Lenca. Sabores Tradicional, Café, Coco, Naranja y Chile.">
+  <meta name="theme-color" content="#3D1F15">
+
+  <!-- Open Graph (vista previa al compartir en redes/WhatsApp) -->
+  <meta property="og:title" content="CacaoLenca · Chocolate artesanal hondureño">
+  <meta property="og:description" content="Cacao 100% hondureño, sin colorantes ni conservantes. Cinco sabores inspirados en la región.">
+  <meta property="og:image" content="img/barras.jpeg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="img/logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<!-- ▼▼▼ Pegar aquí la URL de Instagram cuando la tengan, p. ej. https://www.instagram.com/cacaolenca ▼▼▼ -->
+<body data-instagram="">
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="#inicio" aria-label="CacaoLenca, ir al inicio">
+      <img src="img/logo.jpeg" alt="" width="44" height="44">
+      <span>CacaoLenca</span>
+    </a>
+    <nav aria-label="Principal">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul class="nav__list" id="menu">
+        <li><a href="#sabores">Sabores</a></li>
+        <li><a href="#origen">Origen</a></li>
+        <li><a href="#impacto">Impacto</a></li>
+        <li><a href="#comprar">Comprar</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <div class="container hero__grid">
+      <div>
+        <h1>Chocolate artesanal con el sabor de la tierra Lenca</h1>
+        <p class="hero__lead">Cacao 100% hondureño cultivado por productores locales, combinado con ingredientes naturales de la región. Sin colorantes ni conservantes.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#sabores">Ver sabores</a>
+          <a class="btn btn--secondary" href="#origen">Nuestra historia</a>
+        </div>
+      </div>
+      <figure class="frame" style="margin:0">
+        <img src="img/barras.jpeg" width="849" height="568"
+             alt="Cinco barras CacaoLenca en empaque kraft: Tradicional, Café, Coco, Naranja y Chile, sobre una mesa con granos de cacao y un textil azul.">
+      </figure>
+    </div>
+  </section>
+
+  <div class="guarda" aria-hidden="true"></div>
+
+  <!-- ================= PROPUESTA DE VALOR ================= -->
+  <section class="section section--alt" aria-labelledby="valor-title">
+    <div class="container">
+      <header class="section__head">
+        <h2 id="valor-title">Auténtico desde el grano</h2>
+        <p>Un chocolate premium que resalta lo nuestro y apoya a quienes lo cultivan.</p>
+      </header>
+
+      <div class="values">
+        <article class="value">
+          <div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3.5 2.5-5 6-5 9s1.5 6.5 5 9c3.5-2.5 5-6 5-9s-1.5-6.5-5-9z"/><path d="M12 3v18M9.5 8.5c1 .7 1.7 1.7 2.5 3M14.5 8.5c-1 .7-1.7 1.7-2.5 3M9.5 14c1 .7 1.7 1.5 2.5 3M14.5 14c-1 .7-1.7 1.5-2.5 3"/></svg></div>
+          <div><h3>100% cacao hondureño</h3><p>Cacao de productores locales con notas frutales y florales.</p></div>
+        </article>
+        <article class="value">
+          <div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"/><path d="M5 21c3-4 6-7 10-10"/></svg></div>
+          <div><h3>Ingredientes de origen local</h3><p>Café, coco, naranja y chile seleccionados en Honduras.</p></div>
+        </article>
+        <article class="value">
+          <div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div><h3>Sin colorantes ni conservantes</h3><p>Solo lo natural, preservando el sabor tradicional del cacao.</p></div>
+        </article>
+        <article class="value">
+          <div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 5-5s5 2 5 5M11 20c0-3 2.5-5 5-5s5 2 5 5"/></svg></div>
+          <div><h3>Apoyo a productores Lencas</h3><p>Generamos empleo y valor agregado en la economía rural.</p></div>
+        </article>
+        <article class="value">
+          <div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="12" cy="7" r="2.5"/><circle cx="18" cy="12" r="2.5"/><circle cx="12" cy="17" r="2.5"/></svg></div>
+          <div><h3>Variedad de sabores</h3><p>Cinco combinaciones para distintos gustos y momentos.</p></div>
+        </article>
+        <article class="value">
+          <div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 13h18M12 9v12M12 9c-1.5-3-5-4-5-1.5S10 9 12 9zM12 9c1.5-3 5-4 5-1.5S14 9 12 9z"/></svg></div>
+          <div><h3>Ideal para regalar</h3><p>Presentaciones para consumo personal, compartir o regalo.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SABORES ================= -->
+  <section class="section" id="sabores" aria-labelledby="sabores-title">
+    <div class="container">
+      <header class="section__head">
+        <h2 id="sabores-title">Cinco sabores, una misma raíz</h2>
+        <p>Cada barra combina nuestro cacao con un ingrediente que cuenta algo de Honduras.</p>
+      </header>
+
+      <div class="flavors">
+        <article class="flavor flavor--tradicional">
+          <div class="flavor__media"><div class="flavor__bar" role="img" aria-label="Empaque de la barra Tradicional"></div></div>
+          <div class="flavor__band"><h3>Tradicional</h3></div>
+          <div class="flavor__body">
+            <div class="flavor__meta"><span class="price">L 85</span><span class="weight">50 g</span></div>
+            <p>El cacao hondureño en su forma más pura: profundo, equilibrado y con notas frutales.</p>
+            <ul class="flavor__notes"><li>Intenso</li><li>Frutal</li><li>Clásico</li></ul>
+          </div>
+        </article>
+
+        <article class="flavor flavor--cafe">
+          <div class="flavor__media"><div class="flavor__bar" role="img" aria-label="Empaque de la barra Café"></div></div>
+          <div class="flavor__band"><h3>Café</h3></div>
+          <div class="flavor__body">
+            <div class="flavor__meta"><span class="price">L 85</span><span class="weight">50 g</span></div>
+            <p>Cacao y café de altura hondureño: un encuentro tostado y aromático.</p>
+            <ul class="flavor__notes"><li>Tostado</li><li>Aromático</li><li>Energizante</li></ul>
+          </div>
+        </article>
+
+        <article class="flavor flavor--coco">
+          <div class="flavor__media"><div class="flavor__bar" role="img" aria-label="Empaque de la barra Coco"></div></div>
+          <div class="flavor__band"><h3>Coco</h3></div>
+          <div class="flavor__body">
+            <div class="flavor__meta"><span class="price">L 85</span><span class="weight">50 g</span></div>
+            <p>Suave y tropical. El coco aporta cremosidad y un toque de la costa caribeña.</p>
+            <ul class="flavor__notes"><li>Cremoso</li><li>Tropical</li><li>Suave</li></ul>
+          </div>
+        </article>
+
+        <article class="flavor flavor--naranja">
+          <div class="flavor__media"><div class="flavor__bar" role="img" aria-label="Empaque de la barra Naranja"></div></div>
+          <div class="flavor__band"><h3>Naranja</h3></div>
+          <div class="flavor__body">
+            <div class="flavor__meta"><span class="price">L 85</span><span class="weight">50 g</span></div>
+            <p>Fresco y cítrico. La naranja ilumina las notas frutales del cacao.</p>
+            <ul class="flavor__notes"><li>Cítrico</li><li>Fresco</li><li>Brillante</li></ul>
+          </div>
+        </article>
+
+        <article class="flavor flavor--chile">
+          <div class="flavor__media"><div class="flavor__bar" role="img" aria-label="Empaque de la barra Chile"></div></div>
+          <div class="flavor__band"><h3>Chile</h3></div>
+          <div class="flavor__body">
+            <div class="flavor__meta"><span class="price">L 85</span><span class="weight">50 g</span></div>
+            <p>Un picor cálido que despierta el cacao, como se bebía en tiempos ancestrales.</p>
+            <ul class="flavor__notes"><li>Picante</li><li>Atrevido</li><li>Ancestral</li></ul>
+          </div>
+        </article>
+      </div>
+      <p class="flavors-hint" aria-hidden="true">Desliza para ver los 5 sabores →</p>
+    </div>
+  </section>
+
+  <div class="guarda guarda--escalon guarda--azul" aria-hidden="true"></div>
+
+  <!-- ================= ORIGEN ================= -->
+  <section class="section section--alt" id="origen" aria-labelledby="origen-title">
+    <div class="container split">
+      <div class="split__media">
+        <img src="img/logo.jpeg" width="1600" height="1600" loading="lazy"
+             alt="Logo de CacaoLenca: una mujer Lenca sostiene una mazorca de cacao, rodeada por una guarda de motivos geométricos.">
+      </div>
+      <div class="split__text">
+        <h2 id="origen-title">Un producto ancestral con mirada moderna</h2>
+        <p>El cultivo de cacao forma parte de la tradición agrícola de comunidades como la región Lenca. CacaoLenca busca rescatar y dar a conocer este producto con un enfoque moderno e innovador.</p>
+        <p>Trabajamos con productores locales para transformar el cacao aquí, en Honduras, y darle valor agregado en lugar de exportarlo sin procesar.</p>
+        <div class="stats">
+          <div class="stat"><strong>100%</strong><span>cacao hondureño</span></div>
+          <div class="stat"><strong>5</strong><span>sabores</span></div>
+          <div class="stat"><strong>0</strong><span>conservantes</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= IMPACTO ================= -->
+  <section class="section impact" id="impacto" aria-labelledby="impacto-title">
+    <div class="container">
+      <header class="section__head">
+        <h2 id="impacto-title">Más que chocolate</h2>
+        <p>Cada barra apoya a la tierra, a la gente y a la cultura que la hacen posible.</p>
+      </header>
+      <div class="impact__grid">
+        <article class="impact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c-4 0-7-3-7-7 4 0 7 3 7 7zM12 14c4 0 7-3 7-7-4 0-7 3-7 7z"/><path d="M8 21h8"/></svg>
+          <h3>Sostenibilidad</h3>
+          <p>El cacao crece bajo la sombra de árboles nativos, lo que favorece la reforestación y la biodiversidad. Promovemos la agricultura sostenible y el comercio justo.</p>
+        </article>
+        <article class="impact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+          <h3>Salud y nutrición</h3>
+          <p>El cacao aporta antioxidantes y minerales. Al combinarlo con ingredientes naturales, damos opciones para distintas preferencias.</p>
+        </article>
+        <article class="impact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M10 21v-6h4v6"/></svg>
+          <h3>Impacto social</h3>
+          <p>Trabajar con productores locales genera empleo, fortalece la economía rural y da valor agregado a la materia prima hondureña.</p>
+        </article>
+        <article class="impact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12l4-4 4 4 4-4 4 4M3 17l4-4 4 4 4-4 4 4"/></svg>
+          <h3>Impacto cultural</h3>
+          <p>Rescatamos un cultivo ancestral de la tradición Lenca y lo damos a conocer con un enfoque moderno.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="guarda guarda--azul" aria-hidden="true"></div>
+
+  <!-- ================= COMPRAR ================= -->
+  <section class="section" id="comprar" aria-labelledby="comprar-title">
+    <div class="container buy">
+      <div>
+        <h2 id="comprar-title">Pruébalo, compártelo, regálalo</h2>
+        <div class="buy__price"><strong>L 85</strong><span>barra de 50 g</span></div>
+        <ul class="channels">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.5 11h11L21 7H6.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>
+            <div><strong>Supermercados</strong><span>Barras individuales junto a chocolates artesanales y premium.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+            <div><strong>Cajas surtidas y multipacks</strong><span>Formatos para compartir o regalar en tiendas de volumen como PriceSmart.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M6 3h12l-1 8a5 5 0 0 1-10 0z"/></svg>
+            <div><strong>Degustaciones</strong><span>Búscanos en ferias y stands para probar los cinco sabores.</span></div>
+          </li>
+        </ul>
+        <a class="btn btn--primary js-instagram" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <span class="js-instagram-label">Síguenos en Instagram</span>
+        </a>
+      </div>
+      <figure class="frame" style="margin:0">
+        <img src="img/stand.jpeg" width="849" height="581" loading="lazy"
+             alt="Stand de degustación de CacaoLenca con banner, las cinco barras exhibidas, una caja surtida, mazorcas de cacao y textiles azules Lencas.">
+      </figure>
+    </div>
+  </section>
+
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<div class="guarda" aria-hidden="true"></div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="#inicio">
+          <img src="img/logo.jpeg" alt="" width="44" height="44" loading="lazy">
+          <span>CacaoLenca</span>
+        </a>
+        <p style="margin-top: var(--sp-3); max-width: 42ch;">Chocolate artesanal hondureño elaborado con cacao de productores de la región Lenca.</p>
+      </div>
+      <div>
+        <h3>Explora</h3>
+        <ul>
+          <li><a href="#sabores">Sabores</a></li>
+          <li><a href="#origen">Origen</a></li>
+          <li><a href="#impacto">Impacto</a></li>
+          <li><a href="#comprar">Dónde comprar</a></li>
+          <li><a class="js-instagram" href="#" target="_blank" rel="noopener"><span class="js-instagram-label">Instagram</span></a></li>
+        </ul>
+      </div>
+      <div class="qr" id="qr" hidden>
+        <div class="qr__code" id="qr-code" role="img" aria-label="Código QR de este sitio"></div>
+        <small>Escanea para visitarnos</small>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 CacaoLenca · Proyecto académico de Mercadotecnia, Sección A, Grupo 8</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* =========================================================
+   CacaoLenca — Tokens de diseño
+   Cambiar un valor aquí lo cambia en todo el sitio.
+   ========================================================= */
+:root {
+  color-scheme: light;
+
+  /* ---- Paleta base (propuesta original) ---- */
+  --kraft:        #D8A46E;
+  --chocolate:    #3D1F15;
+  --azul:         #112F71;
+  --terracota:    #9D441F;
+
+  /* ---- Extensiones ---- */
+  --crema:        #F6EEE2;   /* fondo de lectura */
+  --crema-2:      #EFE2CF;   /* fondo alterno de sección */
+  --kraft-oscuro: #B9844F;   /* bordes, separadores */
+  --terracota-hover: #82361A;
+  --blanco:       #FFFFFF;
+
+  /* ---- Sub-paleta de sabores (bandas del empaque) ---- */
+  --sabor-tradicional: #4A2418;
+  --sabor-cafe:        #5C3A21;
+  --sabor-coco:        #EFE3CC;
+  --sabor-naranja:     #D9792B;
+  --sabor-chile:       #8E2A1E;
+
+  /* ---- Roles (usar estos en los componentes) ----
+     Combinaciones PROHIBIDAS para texto:
+     terracota/kraft (2.9) · blanco/kraft (2.2) · azul/chocolate (1.2) */
+  --bg:        var(--crema);
+  --bg-alt:    var(--crema-2);
+  --surface:   var(--kraft);
+  --text:      var(--chocolate);
+  --text-soft: #5E3A2B;
+  --primary:   var(--chocolate);
+  --cta:       var(--terracota);
+  --cta-hover: var(--terracota-hover);
+  --on-cta:    var(--blanco);
+  --accent:    var(--azul);
+  --on-accent: var(--crema);
+  --border:    var(--kraft-oscuro);
+
+  /* ---- Tipografía ---- */
+  --font-display: "Alegreya", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-xs: 0.875rem;  /* 14 */
+  --fs-sm: 1rem;      /* 16 */
+  --fs-md: 1.25rem;   /* 20 */
+  --fs-lg: 1.75rem;   /* 28 */
+  --fs-xl: clamp(2rem, 4vw, 2.5rem);     /* 32–40 */
+  --fs-2xl: clamp(2.5rem, 6vw, 3.5rem);  /* 40–56 */
+
+  --lh-tight: 1.15;
+  --lh-body: 1.6;
+
+  /* ---- Espaciado (escala de 4 px) ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 40px;
+  --sp-6: 64px;
+  --sp-7: 96px;
+
+  /* ---- Forma ---- */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+  --shadow: 0 2px 4px rgb(61 31 21 / 0.06), 0 8px 24px rgb(61 31 21 / 0.10);
+
+  /* ---- Layout ---- */
+  --container: 1200px;
+  --gutter: 16px;
+  --header-h: 68px;
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: 32px; }
+}

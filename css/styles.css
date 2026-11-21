@@ -1,0 +1,356 @@
+/* =========================================================
+   CacaoLenca — Componentes y layouts
+   Depende de tokens.css
+   ========================================================= */
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + var(--sp-3));
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--sp-3);
+  font-weight: 800;
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-2xl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-md); font-weight: 700; }
+p  { margin: 0 0 var(--sp-3); }
+
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+.skip-link {
+  position: absolute; left: var(--sp-3); top: -100px;
+  background: var(--chocolate); color: var(--crema);
+  padding: var(--sp-2) var(--sp-3); border-radius: var(--radius-sm); z-index: 100;
+}
+.skip-link:focus { top: var(--sp-2); }
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--sp-6); }
+@media (min-width: 768px) { .section { padding-block: var(--sp-7); } }
+.section--alt { background: var(--bg-alt); }
+
+.section__head { max-width: 640px; margin: 0 auto var(--sp-5); text-align: center; }
+.section__head p { color: var(--text-soft); font-size: var(--fs-md); margin: 0; }
+
+
+/* ---------- Guarda textil (separador) ---------- */
+.guarda {
+  height: 24px;
+  background-color: var(--chocolate);
+  -webkit-mask: url("../img/guarda-zigzag.svg") repeat-x center / auto 100%;
+          mask: url("../img/guarda-zigzag.svg") repeat-x center / auto 100%;
+}
+.guarda--escalon {
+  -webkit-mask-image: url("../img/guarda-escalon.svg");
+          mask-image: url("../img/guarda-escalon.svg");
+}
+.guarda--azul  { background-color: var(--azul); }
+.guarda--kraft { background-color: var(--kraft); }
+.guarda--sm { height: 16px; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
+  min-height: 48px;
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  font: 600 var(--fs-sm)/1 var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s, transform .2s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--primary { background: var(--cta); color: var(--on-cta); }
+.btn--primary:hover { background: var(--cta-hover); }
+.btn--secondary { background: transparent; color: var(--primary); border-color: var(--primary); }
+.btn--secondary:hover { background: var(--primary); color: var(--crema); }
+.btn--light { background: var(--crema); color: var(--chocolate); }
+.btn--light:hover { background: var(--blanco); }
+.btn[aria-disabled="true"] { opacity: .75; cursor: not-allowed; transform: none; }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgb(246 238 226 / 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgb(185 132 79 / 0.35);
+}
+.header__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: var(--header-h);
+}
+.brand { display: flex; align-items: center; gap: var(--sp-2); text-decoration: none; }
+.brand img { width: 44px; height: 44px; border-radius: 50%; }
+.brand span { font: 800 1.25rem/1 var(--font-display); letter-spacing: .02em; }
+
+.nav__list { display: flex; gap: var(--sp-4); list-style: none; margin: 0; padding: 0; }
+.nav__list a {
+  text-decoration: none; font-weight: 600;
+  padding: var(--sp-2) 0;
+  border-bottom: 2px solid transparent;
+}
+.nav__list a:hover { border-color: var(--terracota); }
+
+.nav__toggle {
+  display: none;
+  width: 44px; height: 44px;
+  border: 0; background: transparent; color: var(--chocolate);
+  border-radius: var(--radius-sm); cursor: pointer;
+}
+.nav__toggle svg { width: 28px; height: 28px; }
+
+@media (max-width: 767px) {
+  .nav__toggle { display: inline-grid; place-items: center; }
+  .nav__list {
+    position: absolute; left: 0; right: 0; top: var(--header-h);
+    flex-direction: column; gap: 0;
+    background: var(--crema);
+    border-bottom: 1px solid var(--border);
+    padding: var(--sp-2) var(--gutter) var(--sp-3);
+    box-shadow: var(--shadow);
+    display: none;
+  }
+  .nav__list.is-open { display: flex; }
+  .nav__list a { display: block; padding: var(--sp-3) 0; border-bottom: 1px solid rgb(185 132 79 / .3); }
+}
+
+/* ---------- Hero ---------- */
+.hero { padding-block: var(--sp-6) var(--sp-6); }
+.hero__grid {
+  display: grid; gap: var(--sp-5); align-items: center;
+}
+@media (min-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr 1.05fr; gap: var(--sp-6); }
+}
+.hero__lead { font-size: var(--fs-md); color: var(--text-soft); max-width: 34ch; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-4); }
+
+.frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 6px solid var(--kraft);
+  max-width: 700px;          /* imagen de 849 px: no ampliar */
+  justify-self: center;
+}
+.frame img { width: 100%; }
+
+/* ---------- Propuesta de valor ---------- */
+.values {
+  display: grid; gap: var(--sp-4);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 600px) { .values { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .values { grid-template-columns: repeat(3, 1fr); } }
+
+.value {
+  display: flex; gap: var(--sp-3); align-items: flex-start;
+  background: var(--blanco);
+  border: 1px solid rgb(185 132 79 / .35);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+}
+.value__icon {
+  flex: none; display: grid; place-items: center;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--kraft); color: var(--chocolate);
+}
+.value__icon svg { width: 28px; height: 28px; }
+.value h3 { margin-bottom: var(--sp-1); }
+.value p { margin: 0; color: var(--text-soft); }
+
+/* ---------- Sabores ---------- */
+.flavors {
+  display: grid; gap: var(--sp-4);
+  grid-template-columns: 1fr;
+}
+/* Móvil: carrusel horizontal con scroll-snap */
+@media (max-width: 539px) {
+  .flavors {
+    display: flex; gap: var(--sp-3);
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: var(--sp-1) var(--gutter) var(--sp-4);
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: thin;
+  }
+  .flavor { flex: 0 0 78%; scroll-snap-align: start; }
+  .flavor:hover { transform: none; }
+  .flavor__bar { max-width: 130px; }
+}
+.flavors-hint { display: none; text-align: center; font-size: var(--fs-xs); color: var(--text-soft); margin: 0; }
+@media (max-width: 539px) { .flavors-hint { display: block; } }
+@media (min-width: 540px) { .flavors { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 820px) { .flavors { grid-template-columns: repeat(6, 1fr); }
+  .flavor { grid-column: span 2; }
+  .flavor:nth-child(4) { grid-column: 2 / span 2; }
+}
+@media (min-width: 1100px) { .flavors { grid-template-columns: repeat(5, 1fr); }
+  .flavor, .flavor:nth-child(4) { grid-column: auto; }
+}
+
+.flavor {
+  --f-bg: var(--sabor-tradicional);
+  --f-fg: var(--crema);
+  display: flex; flex-direction: column;
+  background: var(--blanco);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .25s;
+}
+.flavor:hover { transform: translateY(-4px); }
+
+.flavor__media {
+  background: var(--kraft);
+  padding: var(--sp-4) var(--sp-3) 0;
+  display: grid; place-items: end center;
+}
+/* Recorte de cada barra desde barras.jpeg (849×568).
+   Cada barra mide ~158 px de ancho; mostramos la parte de la etiqueta. */
+.flavor__bar {
+  width: 100%; max-width: 170px;
+  aspect-ratio: 158 / 220;
+  background-image: url("../img/barras.jpeg");
+  background-size: 537% auto;
+  background-position: var(--bar-x) 73%;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  box-shadow: 0 -2px 12px rgb(61 31 21 / .2);
+}
+
+.flavor__band {
+  background: var(--f-bg); color: var(--f-fg);
+  padding: var(--sp-3) var(--sp-4);
+}
+.flavor__band h3 { margin: 0; font-size: var(--fs-lg); }
+
+.flavor__body { padding: var(--sp-3) var(--sp-4) var(--sp-4); display: flex; flex-direction: column; flex: 1; }
+.flavor__body p { color: var(--text-soft); }
+.flavor__notes { display: flex; flex-wrap: wrap; gap: var(--sp-1); list-style: none; padding: 0; margin: 0 0 var(--sp-3); }
+.flavor__notes li {
+  font-size: var(--fs-xs); font-weight: 600;
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-pill);
+  background: var(--crema-2);
+}
+.flavor__meta {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: var(--sp-3);
+  margin-bottom: var(--sp-3);
+  border-bottom: 1px dashed var(--border);
+}
+.flavor__meta .price { font: 800 var(--fs-lg)/1 var(--font-display); color: var(--text); }
+.flavor__meta .weight { font-size: var(--fs-xs); font-weight: 600; color: var(--text-soft); }
+
+.flavor--tradicional { --bar-x: 3.6%;  --f-bg: var(--sabor-tradicional); --f-fg: var(--crema); }
+.flavor--cafe        { --bar-x: 27.5%; --f-bg: var(--sabor-cafe);        --f-fg: var(--crema); }
+.flavor--coco        { --bar-x: 51.1%; --f-bg: var(--sabor-coco);        --f-fg: var(--chocolate); }
+.flavor--naranja     { --bar-x: 74.5%; --f-bg: var(--sabor-naranja);     --f-fg: var(--chocolate); }
+.flavor--chile       { --bar-x: 98%;   --f-bg: var(--sabor-chile);       --f-fg: var(--crema); }
+
+/* ---------- Origen (split) ---------- */
+.split { display: grid; gap: var(--sp-5); align-items: center; }
+@media (min-width: 900px) {
+  .split { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+  .split--reverse .split__media { order: 2; }
+}
+.split__media { justify-self: center; width: 100%; max-width: 460px; }
+.split__media img { border-radius: 50%; box-shadow: var(--shadow); }
+.split__text p { color: var(--text-soft); font-size: 1.0625rem; }
+
+.stats { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-4); }
+.stat strong { display: block; font: 800 var(--fs-xl)/1 var(--font-display); color: var(--azul); }
+.stat span { font-size: var(--fs-xs); color: var(--text-soft); }
+
+/* ---------- Impacto (sección azul) ---------- */
+.impact { background: var(--accent); color: var(--on-accent); }
+.impact .section__head p { color: rgb(246 238 226 / .85); }
+.impact__grid { display: grid; gap: var(--sp-4); }
+@media (min-width: 640px)  { .impact__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .impact__grid { grid-template-columns: repeat(4, 1fr); } }
+.impact-card {
+  border: 1px solid rgb(216 164 110 / .45);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+  background: rgb(255 255 255 / .04);
+}
+.impact-card svg { width: 36px; height: 36px; color: var(--kraft); margin-bottom: var(--sp-3); }
+.impact-card h3 { color: var(--kraft); }
+.impact-card p { margin: 0; color: rgb(246 238 226 / .9); }
+
+/* ---------- Comprar ---------- */
+.buy { display: grid; gap: var(--sp-5); align-items: center; }
+@media (min-width: 900px) { .buy { grid-template-columns: 1.1fr 1fr; gap: var(--sp-6); } }
+.buy__price {
+  display: inline-flex; align-items: baseline; gap: var(--sp-2);
+  background: var(--kraft); color: var(--chocolate);
+  padding: var(--sp-2) var(--sp-4); border-radius: var(--radius-pill);
+  margin-bottom: var(--sp-4);
+}
+.buy__price strong { font: 800 var(--fs-xl)/1 var(--font-display); }
+.channels { list-style: none; padding: 0; margin: 0 0 var(--sp-4); display: grid; gap: var(--sp-3); }
+.channels li {
+  display: flex; gap: var(--sp-3); align-items: flex-start;
+  padding: var(--sp-3); border-radius: var(--radius-md);
+  background: var(--blanco); border: 1px solid rgb(185 132 79 / .35);
+}
+.channels svg { flex: none; width: 24px; height: 24px; color: var(--terracota); margin-top: 2px; }
+.channels strong { display: block; }
+.channels span { color: var(--text-soft); font-size: var(--fs-xs); }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--chocolate); color: var(--crema); padding-block: var(--sp-6) var(--sp-4); }
+.footer__grid { display: grid; gap: var(--sp-5); }
+@media (min-width: 800px) { .footer__grid { grid-template-columns: 1.4fr 1fr auto; align-items: start; } }
+.footer .brand span { color: var(--kraft); }
+.footer p { color: rgb(246 238 226 / .8); }
+.footer h3 { color: var(--kraft); font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: .1em; }
+.footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--sp-2); }
+.footer a { text-decoration: none; }
+.footer a:hover { text-decoration: underline; color: var(--kraft); }
+.qr { display: grid; gap: var(--sp-2); justify-items: center; }
+.qr__code { background: var(--crema); padding: var(--sp-2); border-radius: var(--radius-sm); width: 132px; }
+.qr__code svg { display: block; width: 100%; height: auto; }
+.qr small { color: rgb(246 238 226 / .7); }
+.qr[hidden] { display: none; }
+.footer__bottom {
+  margin-top: var(--sp-5); padding-top: var(--sp-4);
+  border-top: 1px solid rgb(216 164 110 / .25);
+  font-size: var(--fs-xs); color: rgb(246 238 226 / .7);
+  display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); justify-content: space-between;
+}
